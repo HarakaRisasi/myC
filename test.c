@@ -1,4 +1,4 @@
-#include<stdio.h>
+32#include<stdio.h>
 #include<sys/cdefs.h>
 #include<stdlib.h>
 #include<math.h>
