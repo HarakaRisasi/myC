@@ -1,4 +1,4 @@
-Hello:#include<stdio.h>
+#include<stdio.h>
 #include<sys/cdefs.h>
 #include<stdlib.h>
 #include<math.h>
