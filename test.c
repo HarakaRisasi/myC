@@ -6,31 +6,29 @@
 
 //Logarithm - это операция обратная возведению в степен
 
-//inch to mm.
-//1 inch = 2.54 cm
+//n, n¹, n², ..., nⁿ;
+//n += nⁿ - 1;
+/*0 + 0 = 0 || sum = sum + i 
+  0 + 1 = 1 || sum = sum + i 
+  1 + 2 = 3
+  3 + 3 = 6
+  6 + 4 = 10
+*/
+
 int main(){
-    float i, c; // inch range, centimeter
-    float s; // step
-    float cm, inch, mm;
+    int n;
+    int sum;
+    int i;
 
-    int x; // to calculate
+    scanf("%i", &n);
 
-    printf("Inch range(0 to ...) = ");
-    scanf("%f", &i);
-    printf("Step = ");
-    scanf("%f", &s);
+    for(int i; i <= n; sum += i, i++){
+//	sum = sum + i;
+	printf("%i) %i + %i = %i\n", i, sum, i, sum);
 
-
-    for(inch = 0; inch < i; inch = inch + s){    
-	cm = inch * 2.54;
-    	mm = cm * 10;
-
-	printf("Inch = %.2f || mm = %.2f\n", inch, mm);
     }
+
     return 0;
 }
-
-	
-		
 
 
