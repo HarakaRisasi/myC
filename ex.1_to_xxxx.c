@@ -2030,6 +2030,27 @@
 	return 0;
     }
 
+//ex.120
+    //n, n¹, n², ..., nⁿ;
+    //>>sum += nⁿ;
+    //>>n + 1;
+    int main(){
+	int n;
+	int sum;
+	int i;
+	
+	printf("N = ");
+	scanf("%i", &n);
+	
+	for(i; i <= n; i++)
+	    sum += i;
+	
+	printf("Summa first (n) positiv numbers = %i\n", sum);
+	
+	return 0;
+    }
+//ex. 121
+
 //ex.134
 
 //ex.260
