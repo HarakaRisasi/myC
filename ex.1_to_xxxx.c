@@ -2049,7 +2049,28 @@
 	
 	return 0;
     }
+
 //ex. 121
+    //n * 2 - чтобы сумма именно n четных чисел, а не n/2(половины).
+    //i % 2 == 0
+    //sum += i;
+    int main(){             
+	int n;                      
+	int sum;                            
+	int i;                           
+	
+	printf("N = ");
+	scanf("%i", &n);   
+	
+	n = n * 2;// так как сумма именно n четных чисел.
+	
+	for(i; i <= n; i++)             
+	    if(i % 2 == 0)  
+		sum += i;
+	
+	printf("Summa first (n) positiv numbers = %i\n", sum);                      
+	return 0;
+    }  
 
 //ex.134
 
