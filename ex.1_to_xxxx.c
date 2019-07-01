@@ -2091,6 +2091,29 @@
 	return 0;
     }
 
+//ex.123
+    //sum = 1 + ½ + ⅓ + ¼ + .... + 1/n;
+    int main(){
+	float n, dd = 1, dr = 1; //number, devidend, devider;
+	float sum;
+	int i;
+	
+	printf("Amount of digits = ");
+	scanf("%i",&i);
+	
+	
+	for(int y = 1; y <= i; dr++, y++){
+	    n = (dd / dr) + 1;
+	    sum += n;
+	    printf("%i) n = %.4f || sum = %.3f\n",y, n, sum);
+	}
+	
+	return 0;
+    }
+
+//ex.124
+
+
 //ex.134
 
 //ex.260
