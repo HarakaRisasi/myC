@@ -22,7 +22,7 @@ int main(){
 
 
     for(inch = 0; inch < i; inch = inch + s){    
-	cm = inch * 3.54;
+	cm = inch * 2.54;
     	mm = cm * 10;
 
 	printf("Inch = %.2f || mm = %.2f\n", inch, mm);
