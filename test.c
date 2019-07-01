@@ -5,30 +5,21 @@
 #include<string.h>
 
 //Logarithm - это операция обратная возведению в степен
-
-//n, n¹, n², ..., nⁿ;
-//n += nⁿ - 1;
-/*0 + 0 = 0 || sum = sum + i 
-  0 + 1 = 1 || sum = sum + i 
-  1 + 2 = 3
-  3 + 3 = 6
-  6 + 4 = 10
-*/
-
+//sum = 1 + 3 + 5 + 7 + .... + n;
 int main(){
     int n;
     int sum;
     int i;
-
-    scanf("%i", &n);
-
-    for(int i; i <= n; sum += i, i++){
-//	sum = sum + i;
-	printf("%i) %i + %i = %i\n", i, sum, i, sum);
-
+    
+    printf("Amount of digits = ");
+    scanf("%i",&i);
+    
+    for(int y = 1; y <= i; n++, y++){
+	n++;
+	sum += n;
+	printf("%i) n = %i || sum = %i\n",y, n, sum);
     }
 
     return 0;
 }
-
-
+    	 
