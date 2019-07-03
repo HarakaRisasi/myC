@@ -2127,7 +2127,24 @@
 	return 0;
     }
 
+//ex.125
+    //!n - factorial
+    //!n = n * (n - 1);
+    int main(){
+	int a = 1, b = 1, c;
+	int n;
+	
+	printf("Range of factorial: ");
+	scanf("%i", &n);
+	
+	for(b; b <= n; b++){
+	    c = a * b;
+	    a = c;
+	    printf("%i\n", c);      
+	}
+	
+	return 0;
+    }
 
-//ex.134
-
+//ex.144
 //ex.260
