@@ -2168,5 +2168,31 @@
 	return 0;
     }
 
+//ex.127
+    //The arithmetic mean
+    //Input with keyboard
+    //1 + 2 + 3 + 4 + 5 >> average = 3;
+    int main(){
+	int i, a; //i - counter; a - amount of input numbers;
+	float n, sum; //n - input number; sum - summa for calculate;
+	
+	printf("Enter amount of numbers to calculate: ");
+	scanf("%i", &a);
+	
+	printf("Enter five numbers\n");
+	
+	for(i = 1; i < (a + 1); i++){
+	    printf("#%i number > ", i);
+	    scanf("%f", &n);
+	    sum += n;
+	}   
+	
+	sum = sum / 5;
+	
+	printf("Average = %.2f\n", sum);
+	
+	return 0;
+    }
+
 //ex.144
 //ex.260
