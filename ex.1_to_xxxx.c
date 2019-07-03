@@ -2231,30 +2231,40 @@
     //2)numbers
     //Output n - times:
     //summa = n || Average = avg
-    int main(){
-	int i, a; //i - counter; a - amount of input numbers;
+    int main(){             
+	int i = 1, a; //i - counter; a - amount of input numbers;
 	float n, sum, avg; //n - number; sum - sum for calc; avg - calc avg;
 	float max, min;
 	
-	printf("Enter amount of numbers to calculate: ");
+	printf("Enter amount of numbers to calculate: ");   
 	scanf("%i", &a);
 	
-	min = 1;//не знаю зачем тут этот кусок но без него хуже
-	max = 1;//взял эти две строчки из сети
+	printf("#%i number > ", i);
+	scanf("%f", &n);
 	
-	printf("Enter five numbers\n");
-	
-	for(i = 1; i < (a + 1); i++){
-	    printf("#%i number > ", i);
-	    scanf("%f", &n);
-	    
+	/*
+	   - вне цикла вводиться первое число, что станет началом вычисления
+	   - min & max вне цикла присваивают себе значение первого числа,
+	   введенного пользователем.
+	   - внутри цикла for введенные числа будут сравниваться с прототипом
+	   - sum выведен за цикл for, так как было введено число и присвоено n,
+	   соответственно внутри цикла for к нему будут добавляться др. числа
+	   из n !по условию задачи.
+	 */
+	min = n;   
+	max = n;
+	sum = n;
+	//   здесь введены все числа начиная i + 1
+	for(i = 2; i < (a+1); i++){
+	    printf("#%i number > ", i);  
+	    scanf("%f", &n);                                                                                                                  
 	    sum += n;
-	    
 	    if(n < min)
 		min = n;
 	    if(n > max)
 		max = n;
 	}
+
 	avg = sum / i;
 	
 	printf("Summa = %.2f || Average = %.2f\n", sum, avg);
