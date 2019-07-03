@@ -1257,7 +1257,7 @@
 
 //ex.95
     #include<stdlib.h>
-    #include<ctime>
+    #include<time.h>
     int main(){
 	
 	srand(time(NULL));
@@ -2274,6 +2274,33 @@
     }
 
 //ex.130
+    //The sum of random numbers
+    int main(){
+	int n, max;
+	float sum, avg;
+	
+	printf("Enter max. amount of rand. num.: ");
+	scanf("%i", &max);
+	
+	//число от которого вычисляется рандом
+	//srand(4);
+	//время в сек. от кот. вычисл. рандом
+	srand(time(NULL));
+	
+	for(int i = 1; i <= max; i++){
+	    n = rand() % max; //%10 это максимальное число в рандоме
+	    printf("%i) %i\n", i, n);
+	    
+	    sum += n;//сумма рандомных чисел
+	}
+	
+	avg = sum / max;
+	printf("Sum. %i num. = %.2f && Average %i num = %.2f\n", max, sum, max, avg);
+	
+	return 0;
+    }
+
+//ex.131
 
 //ex.144
 //ex.260
