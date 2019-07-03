@@ -2146,5 +2146,27 @@
 	return 0;
     }
 
+//ex.126
+    //The arithmetic mean
+    //1 + 2 + 3 + 4 + 5 >> average = 3;
+    int main(){
+	int i;
+	float n, sum;
+	
+	printf("Enter five numbers\n");
+	
+	for(i = 1; i < 6; i++){
+	    printf("#%i number > ", i);
+	    scanf("%f", &n);
+	    sum += n;
+	}   
+	
+	sum = sum / 5;
+	
+	printf("Average = %.2f\n", sum);
+	
+	return 0;
+    }
+
 //ex.144
 //ex.260
