@@ -2301,6 +2301,39 @@
     }
 
 //ex.131
+    //n Loops.
+    //The sum of n random numbers
+    int main(){
+	int n, max, i, j, loop;
+	float sum, avg;
+	
+	printf("Enter max. amount of LOOP: ");
+	scanf("%i", &loop);
+	
+	printf("Enter max. amount of rand. num.: ");
+	scanf("%i", &max);
+	
+	//число от которого вычисляется рандом
+	//srand(4);
+	//время в сек. от кот. вычисл. рандом
+	srand(time(NULL));
+	
+	for(i = 1; i <= loop; i++){
+	    for(j = 1; j <= max; j++){
+		n = rand() % max; //%10 это максимальное число в рандоме
+		printf("%i ", n);
+		
+		sum += n;//сумма рандомных чисел
+	    }
+	    avg = sum / max;   
+	    printf("\nSum. %i num. = %.2f && Average %i num = %.2f\n", max, sum, max, avg);
+	    sum = 0;
+	    printf("\n");
+	    
+	}    
+	
+	return 0;
+    }
 
 //ex.144
 //ex.260
