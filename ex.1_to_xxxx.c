@@ -2223,6 +2223,47 @@
 	return 0;
     }
 // ex. 129
+    //Спорная задача, но я пока выхода лучше не нашел.
+    //Выхода где надо найти min max из введенных через терминал чисел.
+    //The arithmetic mean
+    //Input with keyboard:
+    //1)amount of numbers
+    //2)numbers
+    //Output n - times:
+    //summa = n || Average = avg
+    int main(){
+	int i, a; //i - counter; a - amount of input numbers;
+	float n, sum, avg; //n - number; sum - sum for calc; avg - calc avg;
+	float max, min;
+	
+	printf("Enter amount of numbers to calculate: ");
+	scanf("%i", &a);
+	
+	min = 1;//не знаю зачем тут этот кусок но без него хуже
+	max = 1;//взял эти две строчки из сети
+	
+	printf("Enter five numbers\n");
+	
+	for(i = 1; i < (a + 1); i++){
+	    printf("#%i number > ", i);
+	    scanf("%f", &n);
+	    
+	    sum += n;
+	    
+	    if(n < min)
+		min = n;
+	    if(n > max)
+		max = n;
+	}
+	avg = sum / i;
+	
+	printf("Summa = %.2f || Average = %.2f\n", sum, avg);
+	printf("Max = %.2f\n", max);
+	printf("Min = %.2f\n", min);
+	return 0;
+    }
+
+//ex.130
 
 //ex.144
 //ex.260
