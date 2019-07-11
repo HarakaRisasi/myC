@@ -2413,7 +2413,28 @@
 	    printf("%.2f %.2f\n", x, y);
 	    x += DX;
 	}
+	
+	return 0;
     }
+
+//ex.135
+    //Multiplication table
+    
+    #define MU 7
+    int main(){
+	int x, y, z;
+	
+	x = MU;    
+	
+	for(y = 1; y <=  10; y++){
+	    z = x * y;
+	    printf("%i * %i = %i\n", x , y, z);
+	}
+	
+	return 0;
+    }
+
+//ex.136
 
 //ex.149
 //ex.260
