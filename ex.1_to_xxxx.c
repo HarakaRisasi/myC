@@ -2377,6 +2377,11 @@
 	int i; //loops counter
 	
 	printf("\nTable the function values y = |x| \n");
+	/*
+	   Диапазон данной функции равен
+	   (верхний предел - нижний предел) : шаг + 1 
+	   +1 - так как ноль.
+	*/
 	n = (HB - LB) / DX + 1;
 	x = LB;
 	for(i = 1; i <= n; i++){
@@ -2385,6 +2390,30 @@
 	    x += DX;
 	}   
     }  
+
+//ex.134
+    // value of function:
+    //y = |x - 2| + |x + 1|;
+    //range -> -4 to 5;
+    //step -> 0.5;
+
+    #define HB 5
+    #define LB -4
+    #define DX 0.5
+    int main(){
+	float x, y;
+	int n;
+	int i;
+	
+	n = (HB - LB) / DX + 1;
+	x = LB;
+	
+	for(i = 1; i <= n; i++){
+	    y = abs((x - 2) + (x + 1));
+	    printf("%.2f %.2f\n", x, y);
+	    x += DX;
+	}
+    }
 
 //ex.149
 //ex.260
