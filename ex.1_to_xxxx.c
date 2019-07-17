@@ -1,3 +1,7 @@
+//Пропущено из-за непонимания процесса программы:
+//ex.138
+//ex.139
+
 #include<stdio.h>
 
 //ex.1
@@ -2470,6 +2474,9 @@
 
 //ex.137
     //Pi calculation
+    //the compile with <math.h> and command with key -lm
+    //gcc name.c -lm
+    //lybrary Math.h is not a compile g++ and gcc
     /*
        Вычисление числа ПИ, в данном случае будет происходить по
        алгоритму связанному с вычислением бесконечного ряда(суммы) Эйлера:
@@ -2492,12 +2499,39 @@
 	}
 	
 	pi = x * 6; //pi^2 / 6, соответственно умножаю на 6    
-	printf("%.13lf\n", sqrt(pi)); //вычисляю корень из результата.
+	printf("%.9lf\n", sqrt(pi)); //вычисляю корень из результата.
 	
 	return 0;
-}
+    }
 
 //ex.138
+
+//ex.139
+
+//ex.140
+    //* * * *
+    // * * * *
+    //* * * *
+    // * * * *
+    //* * * *
+    // * * * *
+    //* * * *
+    // * * * *
+    int main(){
+	int i = 0, j = 0, k = 0;
+	
+	for(k; k < 4; k++){ //amount loops
+	    for(i; i < 4; i++)//string (*_)
+		printf("* ");
+	    i = 0;
+	    printf("\n");
+	    for(j; j < 4; j++)//string (_*)
+		printf(" *");
+	    printf("\n");
+	    j = 0;
+	}
+	return 0;
+    }
 
 //ex.149
 //ex.260
