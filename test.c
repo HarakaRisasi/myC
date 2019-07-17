@@ -4,22 +4,29 @@
 #include<math.h>
 #include<string.h>
 #include<time.h>
+#include<stdbool.h>
 
 //Logarithm - это операция обратная возведению в степень.
-
+//255₁₀ == 1111 1111₂
 int main(){
-    int i = 0, j = 0, k = 0;
-
-    for(k; k < 4; k++){ //amount loops
-    	for(i; i < 4; i++)//string (*_)
-	    printf("* ");
-	i = 0;
-	printf("\n");
-	for(j; j < 4; j++)//string (_*)
-	    printf(" *");
-	printf("\n");
-	j = 0;
+    int n, c, k;
+    
+    printf("Enter an integer in decimal number system\n");
+    scanf("%d", &n);
+    
+    printf("In binary 32-bit system is:\n", n);
+    
+    for (c = 31; c >= 0; c--)
+    {
+	k = n >> c;
+	
+	if (k & 1)
+	    printf("1");
+	else
+	    printf("0");
     }
+    
+    printf("\n");
+    
     return 0;
 }
-  	
