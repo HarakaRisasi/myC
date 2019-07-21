@@ -2721,4 +2721,68 @@
 	return 0;
     }
 
+//ex.144
+    /*
+       Функция fflush сбрасывает в связанный с потоком данных файл данные, 
+       находящиеся в буфере. 
+       Если аргумент stream имеет значения: 
+       - NULL, то сбрасываются буферы всех открытых в данный момент потоков данных; 
+       - stdout, то сбрасывается буфер стандартного потока вывода.
+     */
+    /*
+       Функция sleep приостанавливает работу потока, в котором она 
+       была вызвана, на указанное в аргументе время или до 
+       поступления сигнала по которому вызывается функция обработки
+       сигналов или программа завершает свою работу. 
+       
+       Продолжительность остановки потока управления указывается 
+       в секунду и не может быть меньше указанного времени, если остановка 
+       не была прервана сигналом. Однако время приостановки может 
+       быть больше, указанного времени из-за накладных расходов или 
+       если в момент окончания приостановки работал более приоритетный поток.
+       
+       Приостановка потока с помощью функции sleep () 
+       не оказывает влияния на обработку сигналов.
+     */
+    //#include <stdlib.h> - for system() - system call function
+    //#include <unistd.h> - for sleep() function.
+    #include<stdlib.h>
+    #include<unistd.h> //различные основные функции и константы POSIX
+    int main(){
+    	int hour, minute, second;
+	
+	hour=minute=second=0;
+	//change variant:
+	// while(1) //1)24-hours clock;
+	for(int i = 0; i <= 10; i++){ //1)Second counter;
+	    //clear output screen
+	    system("clear");
+	    
+	    //print time in HH : MM : SS format
+	    printf("%02d : %02d : %02d ",hour,minute,second);                                
+	    //clear output buffer in gcc
+	    fflush(stdout);
+	    
+	    //increase second
+	    second++;
+	    
+	    //update hour, minute and second
+	    if(second==60){
+		minute+=1;
+		second=0;
+	    }
+	    if(minute==60){
+		hour+=1;
+		minute=0;
+	    }
+	    if(hour==24){
+		hour=0;
+		minute=0;
+		second=0;
+	    }
+	    sleep(1);   //wait till 1 second
+	}
+	return 0;
+    }
+
 //ex.260
