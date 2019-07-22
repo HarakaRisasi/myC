@@ -2822,11 +2822,12 @@
 	
 	printf("Fahrenheit to Celsius converting\n\n");
 	printf("  F⁰      C⁰   \n");
-	while(c <= 10){    
+	do{    
 	    f = c * 1.8 + 32;
 	    printf("%.2f || %.2f\n", f, c);
 	    c++;
-	}    
+	} 
+	while(c <= 10);	
 	
 	printf("\nPress Enter to close ");
 	getchar();
@@ -2836,5 +2837,37 @@
     }
 
 //ex.147
-    
+    //>input n - numbers;
+    //>n + n₁ + n₂ + ....
+    //>average n;
+    int main(){
+	system("clear");
+	float n, sum, counter, avg;
+	
+	n = sum = counter = avg = 0;
+	
+	printf("Enter number: \n");
+	printf("To stop input any number < 1\n");
+	do{ 
+	    printf(">> ");	    
+	    scanf("%f", &n);
+	    if(n > 0){      
+		sum += n;     
+		counter++;
+	    }    
+	}    
+	while(n > 0);
+	
+	avg = sum / counter;
+	
+	printf("Amount of input number: %.1f\n", counter);
+	printf("Summa of input numbers: %.1f\n", sum);
+	printf("Average: %.2f\n", avg);
+	
+	getchar();  
+	
+	return 0;
+    }
+
+//ex.148
 //ex.260
