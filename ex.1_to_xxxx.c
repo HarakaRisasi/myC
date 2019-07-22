@@ -2870,7 +2870,7 @@
     }
 
 //ex.148
-    //Max number from positive flow;
+    //Max. number from positive flow;
     //input n;
     //if n > n_1
     //max = n;
@@ -2896,5 +2896,34 @@
     }
 
 //ex.149
+    //Mix. number from positive flow;
+    //input number;
+    //apropriate first input number  like min;
+    //if min < n
+    //min = n;
+    int main(){
+	system("clear");
+	int n, min, counter;
+	
+	printf("To stop input any number < 1\n");
+	printf("Enter the number:\n\n");
+	do{
+	    printf(">> ");
+	    scanf("%i", &n);
+	    if(n >= 0){ 
+		min = n; //the first num. is min    
+		if(min < n){
+		    min = n; 
+		}
+		counter++;
+	    }
+	}
+	while(n >= 0);
+	printf("Total input numbers is: %i\n", counter);
+	printf("The smallest number is: %i\n", min); 
+    }
+
+//ex.150
+    
 
 //ex.260
