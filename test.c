@@ -6,25 +6,36 @@
 #include<stdio.h> //for getchar();
 #include<stdlib.h> //for system("");
 #include <unistd.h> //for sleep();
-//output value of function
-//y = -2.4x² + 5x - 3;
-//range x: -2 >>> 2;
+
+//>input n - numbers;
+//>n + n₁ + n₂ + ....
+//>average n;
 int main(){
     system("clear");
-    int i = 1;
-    float y, x;
-    x = -2.0;
+    float n, sum, counter, avg;
     
-    printf("     X        Y\n");
-    while(x <= 2){
-    	y = -2.4 * x*x + 5 * x - 3;
-    	printf("#%i > %.2f    %.2f\n",i++, x, y);
-	sleep(1);
-	x += 0.5;
-	
+    n = sum = counter = avg = 0;
+
+    printf("Enter number: \n");
+    printf("To stop input any number < 1\n");
+    do{
+	printf(">> ");
+	scanf("%f", &n);
+	if(n > 0){
+	    sum += n;
+	    counter++;
+	}
     }
-  
-    getchar(); 
-    system("clear");
+    while(n > 0);
+
+    avg = sum / counter;
+
+    printf("Amount of input number: %.1f\n", counter);
+    printf("Summa of input numbers: %.1f\n", sum);
+    printf("Average: %.2f\n", avg);
+
+    getchar();
+
     return 0;
 }
+
