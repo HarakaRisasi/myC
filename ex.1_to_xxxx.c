@@ -2802,8 +2802,7 @@
 	    y = -2.4 * x*x + 5 * x - 3;
 	    printf("#%i > %.2f    %.2f\n",i++, x, y);
 	    sleep(1);
-	    x += 0.5;
-	    
+	    x += 0.5;	    
 	}
 	
 	getchar(); 
@@ -2812,5 +2811,30 @@
     }
 
 //ex.146
+    #include<stdio.h> //for getchar();
+    #include<stdlib.h> //for system("");
+    #include <unistd.h> //for sleep();
+    //F⁰ = 5/9 * C⁰ + 32
+    int main(){
+	system("clear");
+	
+	float c, f;
+	
+	printf("Fahrenheit to Celsius converting\n\n");
+	printf("  F⁰      C⁰   \n");
+	while(c <= 10){    
+	    f = c * 1.8 + 32;
+	    printf("%.2f || %.2f\n", f, c);
+	    c++;
+	}    
+	
+	printf("\nPress Enter to close ");
+	getchar();
+	system("clear");
+	
+	return 0;
+    }
 
+//ex.147
+    
 //ex.260
