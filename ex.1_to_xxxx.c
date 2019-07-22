@@ -2723,6 +2723,8 @@
 
 //ex.144
     /*
+       Буфер - это емкость в оперативной памяти, которая хранит файлы в ожидании
+	       копирования либо перемещения.
        Функция fflush сбрасывает в связанный с потоком данных файл данные, 
        находящиеся в буфере. 
        Если аргумент stream имеет значения: 
@@ -2746,8 +2748,6 @@
      */
     //#include <stdlib.h> - for system() - system call function
     //#include <unistd.h> - for sleep() function.
-    #include<stdlib.h>
-    #include<unistd.h> //различные основные функции и константы POSIX
     int main(){
     	int hour, minute, second;
 	
@@ -2784,5 +2784,33 @@
 	}
 	return 0;
     }
+//ex.145
+    #include<stdio.h> //for getchar();
+    #include<stdlib.h> //for system("");
+    #include <unistd.h> //for sleep();
+    //output value of function
+    //y = -2.4x² + 5x - 3;
+    //range x: -2 >>> 2;
+    int main(){
+	system("clear");
+	int i = 1;
+	float y, x;
+	x = -2.0;
+	
+	printf("     X        Y\n");
+	while(x <= 2){
+	    y = -2.4 * x*x + 5 * x - 3;
+	    printf("#%i > %.2f    %.2f\n",i++, x, y);
+	    sleep(1);
+	    x += 0.5;
+	    
+	}
+	
+	getchar(); 
+	system("clear");
+	return 0;
+    }
+
+//ex.146
 
 //ex.260
