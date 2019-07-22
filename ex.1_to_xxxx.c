@@ -2870,4 +2870,31 @@
     }
 
 //ex.148
+    //Max number from positive flow;
+    //input n;
+    //if n > n_1
+    //max = n;
+    int main(){
+	system("clear");
+	int n, max, counter;
+	
+	printf("To stop input any number < 1\n");    
+	printf("Enter the number:\n\n");
+	do{
+	    printf(">> ");
+	    scanf("%i", &n);
+	    if(n >= 0){
+		if(max < n){
+		    max = n;
+		}
+		counter++;
+	    }
+	}
+	while(n >= 0);      
+	printf("Total input numbers is: %i\n", counter);
+	printf("The largest number is: %i\n", max);    
+    }
+
+//ex.149
+
 //ex.260
