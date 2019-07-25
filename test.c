@@ -7,35 +7,51 @@
 #include<stdlib.h> //for system("");
 #include <unistd.h> //for sleep();
 
-//>input n - numbers;
-//>n + n₁ + n₂ + ....
-//>average n;
+//Высокомерие или чистейшая вера в себя???
+//Число p является простым, если p>1 и p не делится ни на какое число, 
+//меньшее p и отличное от 1;
+/*Задача: Программа будет вычислять простое число из введенных вариантов.
+  Алгоритм:
+      >В программе будет два цикла с условиями:
+	> 1)Определяет кол-во итераций(диапазон предложенных чисел);
+	> 2)Определяет кол-во итераций для проверки делимости заданного числа
+	>   на числа не соответствующие условию(простого числа).
+	>   ex:
+	    >num = 13;
+	    >13/2 ~= 6 //определено кол-во итераций;a
+	    ?
+	    Почему Num/2. Птому, что нет смысла делить 
+		num на числа в диапазоне от 1 до Num. 
+	    Так как Num не может быть результатом перемножения чисел 
+		большего значения чем Num/2.
+	    ?
+	    >1)13 % 1 = 0; //TRUE - p / 1 без остатка, соответствует условию
+	    >2)13 % 2 = 1; //FALSE
+	    >3)13 % 3 = 1; //FALSE
+	    >4)13 % 4 = 1; //FALSE
+	    >5)13 % 5 = 3; //FALSE
+	    >6)13 % 6 = 1; //FALSE
+	>13(is prime) 
+	> Фильтрует простые числа от всех целых.
+*/ 
 int main(){
     system("clear");
-    float n, sum, counter, avg;
-    
-    n = sum = counter = avg = 0;
+    int n, d, r;
 
-    printf("Enter number: \n");
-    printf("To stop input any number < 1\n");
-    do{
-	printf(">> ");
-	scanf("%f", &n);
-	if(n > 0){
-	    sum += n;
-	    counter++;
+    for(n = 2; n <= 30; n++){
+	d = 2;
+	do{
+	    r = n % d;
+	    if(r != 0) 
+		d++;
 	}
+	while(r != 0);
+
+	if(d == n) 
+	    printf("%i\n", n);
     }
-    while(n > 0);
-
-    avg = sum / counter;
-
-    printf("Amount of input number: %.1f\n", counter);
-    printf("Summa of input numbers: %.1f\n", sum);
-    printf("Average: %.2f\n", avg);
-
     getchar();
+    system("clear");
 
     return 0;
 }
-
