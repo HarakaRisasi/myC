@@ -2,6 +2,7 @@
 //ex.138
 //ex.139
 //ex.151
+//ex.153
 
 #include<stdio.h>
 
@@ -3005,5 +3006,31 @@
     }
 
 //ex.153
+
+//ex.154
+    //Write all value of function y = 2x² - 5x - 8 in range x = -4 to 4;
+    int main(){
+    	system ("clear");
+	
+	float x, y;
+	
+	x = -4;
+	
+	printf("All values of function y = 2x² - 5x - 8;\n");
+    	printf("Range x = -4 to 4;\n");
+	printf(" X        Y\n--------------\n");
+	
+	while(x <= 4){
+	    y = 2 * x*x - 5*x - 8;
+	    printf("%.2f || %.2f\n", x, y);
+	    x += 0.5;
+	}
+	
+	printf("\nEnter to close");
+	getchar();
+	system("clear");
+	
+	return 0;
+    }
 
 //ex.260
