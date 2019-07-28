@@ -24,7 +24,7 @@ int main(){
 
     //Speed calculate
     V_earth = ((2*M_PI * x) / 360) * 15.0410686403;
-    printf("Speed of earth around it's axis in Lt %f⁰ = %Lf\n", Lt, V_earth);
+    printf("Speed of earth around it's axis in Lt %f⁰ = %Lf\n", V_earth);
 
 
    return 0;
