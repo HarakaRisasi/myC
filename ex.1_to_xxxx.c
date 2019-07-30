@@ -2984,7 +2984,7 @@
     	
     	int i = 1, x, count, ans;
 	
-	(time(NULL));  
+	srand(time(NULL));  
 	x = 1 + rand() % 10;
 	printf("The computer 'conceived' a number from 1 to 10.\n");    
 	printf("Enter  number: \n");
@@ -3179,7 +3179,7 @@
     //!define spave of array
     #define AMOUNT 6 //the array's space.
     int main(){
-    	system("clear");
+	system("clear");
 	
 	int a[AMOUNT], n, i, count;
 	
@@ -3188,10 +3188,10 @@
 	    scanf("%d", &n);
 	    a[i] = n;
 	    
-	    if(n == 0)  
+	    if(n == 0)
 		count++;
 	    
-	    system("clear");   
+	    system("clear");
 	}
 	
 	i = 0; //drop counter for to reuse
@@ -3199,11 +3199,11 @@
 	while(i < AMOUNT){
 	    printf("a[%d] -> %d\n", i, a[i]);
 	    i++;
-	}    
+	}
 	
 	if(count == 1)
 	    printf("The Array has one zero element\n", count);
-	else if(count > 1)          
+	else if(count > 1)
 	    printf("The Array has _%d_ zero elements\n", count);
 	else
 	    printf("The Array don't has zero elements\n");
