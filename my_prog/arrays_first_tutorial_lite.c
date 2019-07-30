@@ -55,22 +55,33 @@ a[8] -> 5
 a[9] -> 4
 */
 //Solution:
+#define AMOUNT 12 //the array's space.
 int main(){
     system("clear");
 
-    int a[10], n, i, j;
+    int a[AMOUNT], n, i, j;
+    int avg, sum = 0; //for average
 
-    for(i; i < 10; i++){
-	printf("a[%d] = ", i);
+    for(i; i < AMOUNT; i++){
+	printf("a[%d/%d] = ", i, AMOUNT);
 	scanf("%d", &n);
 	a[i] = n;
+
+	//average
+	sum += n;
+
 	system("clear");
     }
 
-    while(j < 10){
+    while(j < AMOUNT){
 	printf("a[%d] -> %d\n", j, a[j]);
 	j++;
     }
     
+    //average module
+    avg = sum / AMOUNT;
+    printf("\nSumma = %d\n", sum);
+    printf("(int)Average = %d\n", avg);
+
     return 0;
 }
