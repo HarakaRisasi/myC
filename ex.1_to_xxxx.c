@@ -2984,7 +2984,7 @@
     	
     	int i = 1, x, count, ans;
 	
-	srand(time(NULL));  
+	(time(NULL));  
 	x = 1 + rand() % 10;
 	printf("The computer 'conceived' a number from 1 to 10.\n");    
 	printf("Enter  number: \n");
@@ -3126,7 +3126,7 @@
     int main(){
 	system("clear");
 	
-	int a[AMOUNT], n, i, j;
+	int a[AMOUNT], n, i;
 	int avg, sum = 0; //for average
 	
 	for(i; i < AMOUNT; i++){
@@ -3139,10 +3139,12 @@
 	    
 	    system("clear");
 	}
+
+	i = 0; //drop counter for to reuse
 	
-	while(j < AMOUNT){
-	    printf("a[%d] -> %d\n", j, a[j]);
-	    j++;
+	while(i < AMOUNT){
+	    printf("a[%d] -> %d\n", i, a[i]);
+	    i++;
 	}    
 	
 	//average module
@@ -3154,5 +3156,59 @@
     }
 
 //ex.158
-    
+    //Condition:
+    /*
+       a[0] -> 4
+       a[1] -> 56
+       a[2] -> 6
+       The Array don't has zero elements
+       
+       a[0] -> 4
+       a[1] -> 5
+       a[2] -> 0
+       The Array has one zero element
+       
+       a[0] -> 1
+       a[1] -> 0
+       a[2] -> 0
+       a[n] -> 0
+       The Array has N zero elements
+     */
+
+    //Solution:
+    //!define spave of array
+    #define AMOUNT 6 //the array's space.
+    int main(){
+    	system("clear");
+	
+	int a[AMOUNT], n, i, count;
+	
+	for(i; i < AMOUNT; i++){
+	    printf("a[%d/%d] = ", i, AMOUNT);
+	    scanf("%d", &n);
+	    a[i] = n;
+	    
+	    if(n == 0)  
+		count++;
+	    
+	    system("clear");   
+	}
+	
+	i = 0; //drop counter for to reuse
+	
+	while(i < AMOUNT){
+	    printf("a[%d] -> %d\n", i, a[i]);
+	    i++;
+	}    
+	
+	if(count == 1)
+	    printf("The Array has one zero element\n", count);
+	else if(count > 1)          
+	    printf("The Array has _%d_ zero elements\n", count);
+	else
+	    printf("The Array don't has zero elements\n");
+	
+	return 0;
+    }
+
 //ex.260
