@@ -1,0 +1,610 @@
+#include<cs50.h>
+apt-get install gcc
+wget http://mirror.cs50.net/library50/c/library50-c-5.zip
+unzip library50-c-5.zip
+rm -f library50-c-5.zip
+cd library50-c-5
+apt-get install build-essential
+gcc -c -ggdb -std=c99 cs50.c -o cs50.o
+ar rcs libcs50.a cs50.o
+chmod 0644 cs50.h libcs50.a
+mkdir -p /usr/local/include
+chmod 0755 /usr/local/include
+mv -f cs50.h /usr/local/include
+mkdir -p /usr/local/lib
+chmod 0755 /usr/local/lib
+mv -f libcs50.a /usr/local/lib
+cd ..
+rm -rf library50-c-5
+
+!!!compilate of program:
+	gcc name.c -lcs50 -o new_name
+_____________________________________________
+void - is mean "not parametres"
+
+_____________________________________________
+when i run prog with "string" variable.
+i doing next:
+	#include<stdio.h>
+	int main(void){
+		char name_of_string_var[] = "Helloooo!!";
+		printf("hello, %s'n", name_of_string_var);
+		return 0;
+	}
+
+_____________________________________________
+input string:
+	char name_of_var[14];
+	scanf("%s\n", name_of_var);
+	printf("%s\n", name_of_var);
+
+!!!char name[n] - num of characters in scan word
+!!!but if i wont input several words: "hello_world_!"
+
+______________________________________________
+loop in C:
+ex: 
+	for(int i = 0; i < 10; i++)
+	{
+	printf("hello world!\n");
+	}
+
+ex:
+	int counter = 0;
+	while(1)
+	{
+	print("%i\n", counter);
+	counter++;
+	}
+
+i 	- is counter variable
+i++ 	- is increment operator
+% 	- is placeholder, talk about that (printf) replace placeholder
+	  to the value that takes (counter) variable.
+
+________________________________________________
+Conditional statements, choice operator, cycles
+
+_____a)if(condition){
+	"if condition TRUE, then execute"
+  }
+
+_____b)if(condition){
+	"execute action"
+  }
+  else{
+	"execute another action, if first condition is FALL"
+  }
+
+_____c)swith(n){
+  case const1: instruction
+  "if n equal const1, excute instruction"
+  break; "when condition is end - out from choise"
+  
+  case const2: instruction
+  "if n equal const2, execute"
+  break;
+
+  ...
+
+  default:
+  "if n not equal no one constant, execute
+  break;
+  }
+
+example:если n = 50, напечатать 
+«CS50 is Introduction to Computer Science I», 
+если n = 51, напечатать «CS51 is Introduction to Computer Science II», 
+иначе — напечатать «Sorry, I’m not familiar with that class!»
+
+ switch(n){
+	case 50: printf("Hello 1\n");
+	break;
+	case 51: printf("Hello 2\n");
+	break;
+	default: printf("Sorry\n");
+	break;
+ }
+
+_____d)while: проверяет условие, 
+затем исполняет действие, пока условие истинно.
+
+while(condition){
+	"execute while TRUE"
+	}
+
+
+_____e) do/while отличается тем, что первый раз он исполняет действие 
+не проверяя условия, и только после этого осуществляет проверку.
+Если условие выполняется, цикл повторяет действие, 
+пока условие не станет ложью. 
+
+do{
+	"execute while TRUE"
+    }
+while(condition);
+
+_____f)Цикл for повторяет действие заданное количество раз. 
+
+for(int dwarves = 0; dwarves < 7; dwarves++)
+
+_____g)Циклы можно вкладывать один в другой. 
+В таком случае на каждом шаге внешнего 
+цикла будет полностью выполняться внутренний цикл. 
+
+	for (int row = 0: row <3; row++)
+	{
+		for (int column = 0; column < 4; column++)
+		{
+			printf("x");
+		}
+			printf("\n");
+	}
+
+____________________________________________
+Types of data in C:
+int
+short
+float
+double
+long
+char
+string
+bool
+
+_____________________________________________
+Biblio in C:
+
+#include - include biblio of comlette code in my programm.
+<stdio.h> - the name of biblio and wears an extension (.h)
+
+Функция printf() не встроена в компьютер, но входит в стандартную 
+библиотеку языка Cи.  
+То есть, некий программист ранее написал её и включил в библиотеку. 
+Теперь другие могут ею пользоваться, не изобретая велосипед. 
+Чтобы компилятор её «понял», подключаем <stdio.h>. 
+
+Самое время сделать важное замечание: помимо написания программ, 
+решения задач с помощью собственного кода, 
+хороший разработчик обладает еще однимважным навыком: 
+знанием инструментов, уже написанных и умением использовать 
+их (чужие библиотеки), чтобы не тратить время на изобретение «колеса».
+
+Так, если вы находитесь в процессе решения нудной или сложной задачи, 
+которая при этом кажется довольно распространенной, 
+привыкайте задавать себе вопрос: «а не написал ли её решение 
+кто-нибудь другой?» 
+Велики шансы, что так оно и есть, и вы можете найти эту функцию 
+в существующей библиотеке.
+
+______________________________________________
+Programs in C made from Function and they Operators and variables.
+
+	double bit_less(int a){
+		double a;
+		b = a - 0.5;
+		return b;
+	} 
+
+discription of function:
+	that_type_will_be_return name_of_func (type_of_data_passed_to_the_func name)
+	{
+		new_type_of_var a;
+		b = (double a) - 0.5;
+		return b;	
+	}
+	after that, function return double_type value of variable
+
+______________________________________________
+#include<stdio.h>
+	.h - is a HEADER file, include prototype of any one function 
+		in library (stdio)
+	.o - is object file
+______________________________________________
+Command line in linux/ message by compilator .c program about ERROR.
+
+example:
+a018.c:16:24: error: 'name' undeclared (first use in this function)
+	printf("hello, %s\n", name);
+
+so:
+ 1) a18.c - name of prog.
+ 2) :16 - is a string in prog.
+ 3) :24 - is a symbol in string.
+ 4) : error: - body of error.
+
+______________________________________________
+STRLEN
+
+!! #include<string.h>
+
+example:
+  string s = HARAKA
+  
+  for(int i = 0; i < strlen(); i++){
+	printf("%c\n", s[i]);
+  }
+
+so: 
+	strlen(string_length) - convertion string information in 
+				integer num.
+				ex: Haraka = 6 or 0 to 5.
+				0 to 5 - is indexes of charakters.
+
+	%c - is a placeholder for the single cymbol(character)
+
+	s - s(name of var)
+        [i] - (index of char)
+______________________________________________
+Two arg inside the loop body 
+
+ex: for(int i, n = strlen(arg); i < n; i++){
+	...
+    }
+
+______________________________________________
+argc (arguments count) - contains the number 
+			 of parameters passed to the main function.
+p.s. argc == 1 is true.
+     because if function (main) don't get noone param-s from user,
+     function get name of function like first parameter
+
+argv (arguments values) - arrays that discribe the arguments, like a 
+                          massive of string datas.
+			  Through the command line, 
+			  you can only transfer data of a string type. 
+                          So it is through the argv [] parameter that 
+                          any information is transmitted.
+______________________________________________
+1D arrays
+initialization of array
+int n[] = {0,1,2,3,4,5,6,7,8,9};
+or
+int n[10];
+
+
+2D arrays
+int argv[][] or (type name [second dimension][first dimension])
+
+left index - defines a string. 
+right index - defines column. 
+
+
+example:         
+int zero[4][5] =               column
+             ------------------------------------
+             |[0][0]|[0][1]|[0][2]|[0][3]|[0][4]|
+             |[1][0]|[1][1]|[1][2]|[1][3]|[1][4]|
+      string |[2][0]|[2][1]|[2][2]|[2][3]|[2][4]|
+             |[3][0]|[3][1]|[3][2]|[3][3]|[3][4]|
+             ------------------------------------
+
+or 
+
+printf(%c\n", argv[i][j]);
+
+simbol number j in argv[i].
+_____________________________________________
+Caesar chipher
+
+Alphabet:
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+    |                                             |
+Chipher(1 key):                                   |
+    D                                             A
+    |                                             |
+Chipher(3 key):                                   |
+    F                                             C
+
+example: word: cat
+         Caesar chipher (6 key):
+                        c -> h
+                        a -> f
+                        t -> y
+     so:
+         Caesar(cat, 6) = hfy;
+
+FORMULA by Caesar:
+
+p  - is unencrypted text;
+pi - is a character in (p), that was lacated in position (i);
+i  - numbers of positions (pi) and (ci);
+k  - is a secret key;
+c  - is encrypted text;
+ci - is a character in (c), that was located in position (i);
+
+??? % - is the modulo operator, so for example 
+        11 % 3 = 3 and remainder 1;
+        5  % 2 = 2 and remainder 0;
+        or
+        11 % 3 = 1;
+        5  % 2 = 0;
+
+ci = (pi + k) % 27
+
+example:
+
+ci = (B2 + 13) % 26
+ci = O15
+
+Caesar(B, 13) = O
+____________________________________________
+Vegener Chipher:
+
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+| | | | | | | | | | |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+a b c d e f g h i j k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
+
+ci = (pi + kj) % 26;
+
+original word: hello world
+key word:      banan banan
+process: (h(7) + b(1)) % 26 = i(8);
+         >h = i
+	 >e = e
+         >l = y
+         >l = l
+         >o = b
+
+         >w = x
+         >o = o
+         >r = e
+         >l = l
+         >d = q
+
+chipher word: ieyld xoelq
+____________________________________________
+TRANSFORMATIONS OF CHARACTER STRINGS:
+lib:<stdio.h>
+
+atoi - conv. string type(string) in type(int)
+       ex: 2hello -> 2
+           123.44 -> 123
+
+lib:<ctype.h>
+
+isupper - TRUE if letter is upper register
+islower - TRUE if letter is lower register
+isalpha - TRUE if argument is letter
+          ex:isalpha(PlainText[i])
+
+____________________________________________
+SORTS:
+
+Bubble sort - is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+
+ex:
+First pass: 
+51428 -> 15428 - algorithm compares the first two elements, 
+                 and swaps since 5>1
+15428 -> 14528 - swap since 5>4
+14528 -> 14258 - swap since 5>2
+14258 -> 14258 - now since these elements are already in order 8>5,
+                 algorithm does not swap them.
+
+Second pass:
+14258 -> 14258
+14258 -> 12458 - swap since 4>2
+12458 -> 12458
+12458 -> 12458
+
+Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.
+
+Third pass:
+12458 -> 12458
+12458 -> 12458
+12458 -> 12458
+12458 -> 12458
+
+https://www.geeksforgeeks.org/wp-content/uploads/gq/2014/02/bubble-sort1.png
+
+Selection sort - find the minimum element in array and place it at
+                 beginning.
+
+arr[] = 64 25 12 22 11
+	find the min and place at the beginning
+
+-> 11 25 12 22 64
+and repeat
+-> 11 12 25 22 64
+-> 11 12 22 25 64
+-> 11 12 22 25 64
+____________________________________________
+Asymptotic notation
+
+Before how can use Computing power, need to understand, how to work 
+algorithms.
+And how do they process the data.
+
+Is helps to calculate how fast the program, process or algorithm work
+with help anyone algorithm.
+
+Asymptotic complexity = complexity of algorithm.
+
+-For measure maximum speed, use O(n²);
+
+-For measure minimum(best) speed, use Ω
+
+-For large inputs:
+	get efficiency algorithm to 10 nums.
+	or get efficiency algorithm to 1000000 nums.	
+
+Computational Complexity:
+(algorithm runs in N time)
+
+super fast
+O(1)       - constant time
+O(log n)   - logarithmic time
+O(n)       - linear time
+O(n log n) - linearithmic time
+O(n²)      - quadratic time
+O(n^c)     - polynomial time
+O(c^n)     - exponential time
+O(n!)      - factorial time
+O(~)       - infinite time
+super slow
+
+
+O(n) - Big 'O' -> n = O(n²);
+O is similar to <= ;
+
+θ    - Theta   -> n < 3n < 5n;
+θ is similar to ==;
+
+Ω    - Omega   -> n³= Ω(log(n));
+Ω is similar to >=;
+
+_______________________________________
+Big O notation:
+
+Big O notation is used in Computer Science to describe the performance
+or complexity of an algorthm.
+Big O can be used to describe the execution time required or the space used(e.g.in memory or on disk) by an algorithm
+
+examples:
+O(1) - algorithm that will always execute in the constant time.
+	bool IsFirstElementNull(IList<string> elements){
+		return elements[0] == null;
+	}
+
+O(N) - algorithm whose performance will grow linearly in direct 
+       proportion to the size of the input date set.
+	bool ContainsValue(IList<string> elements, string value){
+		foreach(var element in elements){
+			if(element == value) return true;
+		}
+		return false;
+	}
+
+O(N²) - algorithm whose performance is directly proportional to the
+	square of the size of the input data set.
+	Deeper nested iterations will result in O(N³),O(N⁴) etc.
+	bool ContainsDuplicates(IList<string> elements){
+	   for (var outer = 0; outer <elements.Count; outer++){
+	      for(var inner = 0; inner < elements.Count; inner++){
+                 //Don't compare with self
+                 if(outer == inner) continue;
+
+                 if(elements[outer] == elements[inner]) return true;
+              }
+          }
+          return false;
+       }
+___________________________________________
+Logarithms
+
+Binary search is a technique used to search sorted  data sets.
+It works by selecting the middle element of the data set, essentially
+the median, and compares it against a target value.
+If the values match it will return success.
+
+O(log N) - the iterative halving of data sets described in the binary
+	   search example produces a growth curve that peaks at the
+           beginning and slowly flattens out as the size of the data
+           sets increase e.g. an input data set containing 10 items 
+           takes one second to complete, a data set containing 100 
+           items takes two seconds, and a data set containing 1000 
+           items will take three seconds. Doubling the size of the 
+           input data set has little effect on its growth as after 
+           a single iteration of the algorithm the data set will be 
+           halved and therefore on a par with an input data set half 
+           the size. This makes algorithms like binary serch extremely 
+           efficient when dealing with large data sets.
+
+...
+
+O(n) - is worst time
+θ(n) - is when best and worst results is equal
+Ω(1) - is best time
+__________________________________________
+Pointers
+is a variables, value of himself is address of another variable.
+Before pointer will used to store any address of variable, i must
+declare a pointer.
+
+Pointers - in C is address, which is a numeric value
+
+* - use to declare a pointer
+* - return value of the variable.
+& - each memory cell has its own address, 
+    which can be accessed using the ampersand operator (&), 
+    which denotes an address in memory.
+
+	ex: type *var-name;
+            -----------------
+	    
+int *ip;     /*pointer to an integer*/
+double *dp;  /*pointer to a double*/
+float *fp;   /*pointer to a float*/
+char *ch;     /*pointer to a character*/
+
+Operation that will do with help pointers:
+ a)define a variable of pointer
+ b)assign address variable to pointer
+ c)receive access to value at the address
+___________________________________________
+
+!!!x₈ = x₇ + x₆ (Xn = Xn-1 + Xn-2)
+where:
+
+xn is term number "n"
+xn-1 is the previous term (n-1)
+xn-2 is the term before that (n-2)
+__________________________________________
+
+Функция printf и форматы вывода
+Спецификаторы формата функции printf()
+
+    Код		        Формат
+
+    %c    Символ
+    %d    Десятичное целое число со знаком
+    %i    Десятичное целое число со знаком
+    %e    Научный формат (строчная буква е)
+    %Е    Научный формат (прописная буква Е)
+    %f    Десятичное число с плавающей точкой    
+    %g    В зависимости от того, какой формат короче, 
+	  применяется либо %e, либо %f
+    %G    В зависимости от того, какой формат короче, 
+	  применяется либо %E, либо %f
+    %o    Восьмеричное число без знака
+    %s    Строка символов
+    %u    Десятичное целое число без знака
+    %x    Шестнадцатеричное число без знака (строчные буквы)
+    %X    Шестнадцатеричное число без знака (прописные буквы)
+    %р    Указатель
+    %n    Указатель на целочисленную переменную. 
+	  Спецификатор вызывает присвоение этой целочисленной 
+	  переменной количества символов, выведенных перед ним 
+    %%    Знак %
+
+Модификатор точности:
+    Для форматов e, E и f модификатор точности означает количество 
+    цифр после десятичной точки. 
+    
+    !Например, форматный код %10.4f выведет на экран число, 
+    у которого количество цифр не превышает 10, 
+    четыре из которых размещаются после десятичной точки.
+
+    Если модификатор используется для вывода строк, он задает 
+    максимальную длину поля. 
+    
+    !Например, спецификатор %5.7s означает, что на экран будет 
+    выведена строка, состоящая как минимум из пяти символов, 
+    длина которой не превышает семи. 
+    !Если строка окажется длиннее, последние символы будут отброшены.
+
+    Модификатор l (буква "эль") позволяет выводить значения типа long int. 
+    
+    !Например, спецификатор %ld означает, что на экран будет выведено 
+    значение типа long int. 
+    Для вывода значения типа short int используется модификатор h. 
+    Например, спецификатор %hu означает, что на экран будет выведено 
+    значение типа short unsigned int.
+
+
+
+
+
+
+
