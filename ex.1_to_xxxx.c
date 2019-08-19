@@ -3301,6 +3301,54 @@
     }
 
 //ex.161
+    //condition:
+    /*
+       Calculates the arithmetic mean of nonzero elements of an array 
+       of integers entered from the keyboard.
+     */  
+    #define NUM 10  
+    int main(){
+	system("clear");
+	
+	int i, n;
+	int zero_count = 0, count = 0, sum = 0;
+	float avg;
+	int num_arr[NUM];
+	int *ptr[NUM];
+	
+	printf("Enter num %d any numbers\n", NUM);
+	for(i = 0; i < NUM; i++){   
+	    printf("%d/%d >> ", i+1, NUM);
+	    scanf("%d", &num_arr[i]);
+	    ptr[i] = &num_arr[i];
+	    sum += *ptr[i];
+	    if(*ptr[i] == 0)    
+		zero_count++;    
+	    else
+		count++;
+	}
+	
+	avg = (float)sum / (float)count;
+	
+	system("clear");
+	
+	printf("-> ");
+	for(i = 0; i < NUM; i++){
+	    printf(" %d ", *ptr[i]);
+	}
+	
+	printf("\n-----------------------------------");
+	
+	printf("\nAmount of the non zero elements: %d", count);
+	printf("\nAmount of zero elements: %d", zero_count);
+	printf("\nSum of %d non zero elements: %d",count, sum);
+	printf("\nAverage of non zero elements: %.2f", avg);
+	printf("\n");
+	
+	return 0;
+    }
+
+//ex.162
 
 
 //ex.260
