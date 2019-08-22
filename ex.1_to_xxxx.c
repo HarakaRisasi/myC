@@ -3460,6 +3460,115 @@
     }
 
 //ex.164
+    //condition:
+    /*
+       -> 8 0 7 2 5 3 8 6 8 4
+       ----------------------------------------
+       The number 2 was entered.
+    */
+
+    #define NUM 10 
+    int main(){
+    	system("clear");
+	
+	//Initialization
+	int i;
+	int arr[NUM];
+	int *ptr;
+	int n;
+	
+	//Calculation
+	scanf("%d", &n);
+	
+	srand(time(NULL));
+	for(i = 0; i < NUM; i++)
+	    arr[i] = rand() % 10;
+	
+	ptr = arr;
+	
+	for(i = 0; i < NUM; i++){
+	    if(n == *ptr){
+		ptr++;
+	    }
+	    else
+		ptr++;
+	}
+	
+	//Output
+	system("clear");
+	
+	ptr = arr;
+	
+	printf("->");
+	for(i = 0; i < NUM; i++){
+	    printf(" %d", *ptr);
+	    ptr++;
+	}
+	
+	printf("\n");
+	printf("----------------------------------------\n");
+	printf("The number %d was entered.\n", n);
+	
+	return 0;
+    }
+
+//ex.165
+
+//ex.166
+    //condition:
+    /*
+       -> 8 0 7 2 5 3 8 6 8 4
+       ----------------------------------------
+       The number 2 was entered.
+       In the array this number occurs 1 times
+    */
+
+    #define NUM 10 
+    int main(){
+    	system("clear");
+	
+	//Initialization
+	int i;
+	int arr[NUM];
+	int *ptr;
+	int n, count = 0;
+	
+	//Calculation
+	scanf("%d", &n);
+	
+	srand(time(NULL));
+	for(i = 0; i < NUM; i++)
+	    arr[i] = rand() % 10;
+	
+	ptr = arr;
+	
+	for(i = 0; i < NUM; i++){
+	    if(n == *ptr){
+		count++;
+		ptr++;
+	    }
+	    else
+		ptr++;
+	}
+	
+	//Output
+	system("clear");
+	
+	ptr = arr;
+	
+	printf("->");
+	for(i = 0; i < NUM; i++){
+	    printf(" %d", *ptr);
+	    ptr++;
+	}
+	
+	printf("\n");
+	printf("----------------------------------------\n");
+	printf("The number %d was entered.\n", n);
+	printf("In the array this number occurs %d times\n", count);
+	
+	return 0;
+    }
 
 //ex.172
 
