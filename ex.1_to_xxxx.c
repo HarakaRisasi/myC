@@ -38,7 +38,7 @@
 
 //ex.14
 	//y = -2.7x³+0.23x² - 1.4
-	int x = n;
+	    int x = n;
 	float y = -2.7* x*x*x + 0.23* x*x - 1.4
 
 //ex.15
@@ -3349,7 +3349,62 @@
     }
 
 //ex.162
+    //condition:
+    /*
+       ->  3 5 4 878 54 38 1 23 68 2
+       -------------------------------
+       Avg without Min and Max: 24.62
+       Min: 1
+       Max: 878
+    */
 
+    #define NUM 10 
+    int main(){
+	system("clear");
+	
+	//Initialization
+	int arr[NUM];
+	int *ptr[NUM];
+	int min, max;
+	int i, j;
+	int sum = 0;
+	float count = -2;
+	float avg;
+	
+	//Calculation    
+	printf("Enter %d num.(no less than 3)\n", NUM);
+	for(i = 0; i < NUM; i++){
+	    scanf("%d", &arr[i]);
+	    ptr[i] = &arr[i];
+	    sum += *ptr[i];
+	    count++;
+	}
+	
+	max = min = *ptr[0];
+	
+	for(i = 0; i < NUM; i++){
+	    if(min > *ptr[i])
+		min = *ptr[i];
+	    else if(max < *ptr[i])
+		max = *ptr[i];
+	}
+	
+	avg = (float)(sum - min - max) / count;
+	
+	//Output on display
+	system("clear");
+	sleep(1);
+	
+	printf("-> ");
+	for(i = 0; i < NUM; i++)
+	    printf(" %d", *ptr[i]);
+	
+	printf("\n-------------------------------");
+	printf("\nAvg without Min and Max: %.2f", avg);
+	printf("\nMin: %d\nMax: %d\n", min, max);
+    }
+
+//ex.163
 
 //ex.260
 
