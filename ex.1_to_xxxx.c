@@ -3402,6 +3402,8 @@
 	printf("\n-------------------------------");
 	printf("\nAvg without Min and Max: %.2f", avg);
 	printf("\nMin: %d\nMax: %d\n", min, max);
+
+	return 0;
     }
 
 //ex.163
@@ -3453,10 +3455,11 @@
 	
 	printf("-------------------------------");
 	printf("\nAvg. weather: %.2f\n", avg);
+
+	return 0;
     }
 
 //ex.164
-
 
 //ex.172
 
